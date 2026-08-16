@@ -631,10 +631,8 @@ const translations = {
     footer_desc: "Официальный представитель SCRAEGG GmbH в России. Поставки, демонстрации и поддержка для заведений общественного питания.",
     footer_company: "Компания", footer_info: "Информация",
     footer_link1: "Официальный сайт SCRAEGG", footer_link2: "Политика конфиденциальности",
-    footer_link3: "Условия использования", footer_link4: "Связаться с нами",
-    footer_priv: "Конфиденциальность", footer_terms: "Условия",
-    footer_link_vop: "VOP / Общие условия",
-    footer_link_rek: "Reklamační řád",
+    footer_link4: "Связаться с нами",
+    footer_priv: "Конфиденциальность",
     form_message_ph: "Расскажите подробнее о вашем заведении или задайте вопрос...",
     form_privacy: 'Нажимая кнопку, вы соглашаетесь с <a href="#privacy-modal" class="open-privacy">Политикой конфиденциальности</a> и даёте согласие на обработку персональных данных в соответствии с GDPR. Ваши данные не передаются третьим лицам.',
     form_type_options: ["Выберите...", "Кафе / кофейня", "Ресторан", "Отель", "Магазин / АЗС", "Офисная кухня / кантина", "Другое"],
@@ -701,10 +699,8 @@ const translations = {
     footer_desc: "Oficiální zástupce SCRAEGG GmbH v České republice. Dodávky, ukázky a podpora pro stravovací zařízení.",
     footer_company: "Společnost", footer_info: "Informace",
     footer_link1: "Oficiální web SCRAEGG", footer_link2: "Zásady ochrany osobních údajů",
-    footer_link3: "Podmínky použití", footer_link4: "Kontaktujte nás",
-    footer_priv: "Soukromí", footer_terms: "Podmínky",
-    footer_link_vop: "VOP / Obchodní podmínky",
-    footer_link_rek: "Reklamační řád",
+    footer_link4: "Kontaktujte nás",
+    footer_priv: "Soukromí",
     form_message_ph: "Napište více o vaší provozovně nebo položte otázku...",
     form_privacy: 'Odesláním formuláře souhlasíte se <a href="#privacy-modal" class="open-privacy">Zásadami ochrany osobních údajů</a> a dáváte souhlas se zpracováním osobních údajů v souladu s GDPR. Vaše údaje nejsou předávány třetím stranám.',
     form_type_options: ["Vyberte...", "Kavárna / coffee shop", "Restaurace", "Hotel", "Obchod / čerpací stanice", "Firemní kuchyně / kantýna", "Jiné"],
@@ -770,10 +766,8 @@ const translations = {
     footer_desc: "Official SCRAEGG GmbH representative in Czech Republic. Supply, demonstrations and support for food service businesses.",
     footer_company: "Company", footer_info: "Information",
     footer_link1: "Official SCRAEGG website", footer_link2: "Privacy Policy",
-    footer_link3: "Terms of use", footer_link4: "Contact us",
-    footer_priv: "Privacy", footer_terms: "Terms",
-    footer_link_vop: "Terms & Conditions",
-    footer_link_rek: "Complaints Procedure",
+    footer_link4: "Contact us",
+    footer_priv: "Privacy",
     form_message_ph: "Tell us more about your venue or ask a question...",
     form_privacy: 'By submitting this form you agree to our <a href="#privacy-modal" class="open-privacy">Privacy Policy</a> and consent to the processing of your personal data in accordance with GDPR. Your data will not be shared with third parties.',
     form_type_options: ["Select...", "Café / coffee shop", "Restaurant", "Hotel", "Shop / petrol station", "Office kitchen / canteen", "Other"],
@@ -1223,10 +1217,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="footer-col">
         <h4 data-i18n="footer_info">Информация</h4>
         <a href="https://scraegg.com/en/products/scraegg-pro/" target="_blank" data-i18n="footer_link1">Официальный сайт SCRAEGG</a>
-        <a href="#" onclick="openModal('modal-vop');return false;" data-i18n="footer_link_vop">VOP</a>
         <a href="#" id="privacy" onclick="openModal('modal-privacy');return false;" data-i18n="footer_link2">Политика конфиденциальности</a>
-        <a href="#" onclick="openModal('modal-reklamace');return false;" data-i18n="footer_link_rek">Reklamační řád</a>
-        <a href="#" onclick="openModal('modal-vop');return false;" data-i18n="footer_link3">Условия использования</a>
         <a href="#contact" data-i18n="footer_link4">Связаться с нами</a>
       </div>
     </div>
@@ -1234,7 +1225,6 @@ document.addEventListener('DOMContentLoaded', function() {
       <span>© 2026 · ИП Дубовский А.В. · ИНН 381205211684 · ОГРНИП 318385000112596 · Все права защищены</span>
       <div>
         <a href="#" onclick="openModal('modal-privacy');return false;" data-i18n="footer_priv">Конфиденциальность</a>
-        <a href="#" onclick="openModal('modal-vop');return false;" data-i18n="footer_terms">Условия</a>
         <a href="https://scraegg.com/en" target="_blank">scraegg.com</a>
       </div>
     </div>
@@ -1350,146 +1340,6 @@ if (form) {
         <li style="margin-bottom:14px;"><strong>В случае отзыва согласия Оператор вправе продолжить обработку персональных данных без согласия Пользователя при наличии оснований, перечисленных в п.п. 2–11 ч. 1 ст. 6, ч. 2 ст. 10, ч. 2 ст. 11 Федерального закона от 27.07.2006 N 152-ФЗ «О персональных данных».</strong></li>
       </ol>
       <p style="margin-top:20px;">Контакты Оператора: <a href="mailto:Info@proomlet.ru">Info@proomlet.ru</a> · <a href="tel:+79250055482">+7 925 005-54-82</a></p>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: VOP -->
-<div class="modal-overlay" id="modal-vop">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('modal-vop')">×</button>
-    <div class="modal-lang-tabs">
-      <button class="modal-tab active" onclick="switchModalLang('modal-vop','cs')">🇨🇿 CZ</button>
-      <button class="modal-tab" onclick="switchModalLang('modal-vop','en')">🇬🇧 EN</button>
-      <button class="modal-tab" onclick="switchModalLang('modal-vop','ru')">🇷🇺 RU</button>
-    </div>
-    <div class="modal-content active" data-lang="cs">
-      <h2>Všeobecné obchodní podmínky</h2>
-      <p class="modal-meta">SCRAEGG Pro · Platné od: 1. dubna 2026</p>
-      <h3>1. Prodávající</h3>
-      <p>ZĚMOV&amp;PARTNEŘI s.r.o., Praha 9, IČO: 28456866 · <a href="mailto:Info@proomlet.ru">Info@proomlet.ru</a></p>
-      <h3>2. Předmět smlouvy</h3>
-      <p>Tyto VOP upravují podmínky prodeje a dodávky zařízení SCRAEGG Pro podnikatelům (B2B) v České republice.</p>
-      <h3>3. Uzavření smlouvy</h3>
-      <p>Smlouva vzniká písemným potvrzením objednávky prodávajícím. Produkty na webu nejsou závaznou nabídkou. Prodávající může objednávku odmítnout do 3 pracovních dnů.</p>
-      <h3>4. Ceny a platby</h3>
-      <ul><li>Ceny bez DPH, splatnost 14 dní od faktury</li><li>Úrok z prodlení: 0,05 % za každý den</li><li>Platba převodem nebo hotovostí po dohodě</li></ul>
-      <h3>5. Dodací podmínky</h3>
-      <ul><li>Dodací lhůta: 2–4 týdny od potvrzení a platby</li><li>Doprava na adresu kupujícího v ČR, náklady dle nabídky</li><li>Riziko přechází při předání dopravci</li></ul>
-      <h3>6. Výhrada vlastnictví</h3>
-      <p>Zboží je majetkem prodávajícího do úplného zaplacení.</p>
-      <h3>7. Záruka</h3>
-      <p>12 měsíců od dodání. Podrobnosti v Reklamačním řádu.</p>
-      <h3>8. Odpovědnost</h3>
-      <p>Za úmysl a hrubou nedbalost. Nepřímé škody a ušlý zisk jsou vyloučeny. Limit = kupní cena objednávky.</p>
-      <h3>9–11. Právo, spory, změny</h3>
-      <p>Právo ČR. Spory: nejprve dohodou, poté soud v Praze. Změny VOP s 14denním předstihem na multichef.cz.</p>
-    </div>
-    <div class="modal-content" data-lang="en">
-      <h2>General Terms and Conditions of Sale</h2>
-      <p class="modal-meta">SCRAEGG Pro · Effective from: 1 April 2026</p>
-      <h3>1. Seller</h3>
-      <p>ZĚMOV&amp;PARTNEŘI s.r.o., Praha 9, Czech Republic, IČO: 28456866 · <a href="mailto:Info@proomlet.ru">Info@proomlet.ru</a></p>
-      <h3>2. Scope</h3>
-      <p>These GTC govern the sale and delivery of SCRAEGG Pro equipment to business customers (B2B) in the Czech Republic.</p>
-      <h3>3. Conclusion of Contract</h3>
-      <p>A contract is formed upon written order confirmation by the Seller. Website listings are not binding offers. The Seller may decline an order within 3 business days.</p>
-      <h3>4. Prices and Payment</h3>
-      <ul><li>Prices excl. VAT, payment due 14 days from invoice</li><li>Late payment interest: 0.05% per day</li><li>Bank transfer or cash on prior agreement</li></ul>
-      <h3>5. Delivery</h3>
-      <ul><li>Lead time: 2–4 weeks from confirmation and payment</li><li>Delivery to Buyer's address in Czech Republic, shipping costs per quotation</li><li>Risk passes upon handover to carrier</li></ul>
-      <h3>6. Retention of Title</h3>
-      <p>Goods remain the Seller's property until full payment is received.</p>
-      <h3>7. Warranty</h3>
-      <p>12 months from delivery. Full details in the Complaints Procedure.</p>
-      <h3>8. Liability</h3>
-      <p>Liability for intent and gross negligence. Indirect damages and lost profits excluded. Cap = purchase price of the order.</p>
-      <h3>9–11. Law, Disputes, Changes</h3>
-      <p>Czech law applies. Disputes: by agreement first, then court in Prague. GTC updates published at multichef.cz with 14 days' notice.</p>
-    </div>
-    <div class="modal-content" data-lang="ru">
-      <h2>Общие условия продажи (VOP)</h2>
-      <p class="modal-meta">SCRAEGG Pro · Действует с: 1 апреля 2026 г.</p>
-      <h3>1. Продавец</h3>
-      <p>ZĚMOV&amp;PARTNEŘI s.r.o., Praha 9, ЧР, IČO: 28456866 · <a href="mailto:Info@proomlet.ru">Info@proomlet.ru</a></p>
-      <h3>2. Предмет</h3>
-      <p>Настоящие ОУП регулируют продажу и поставку оборудования SCRAEGG Pro корпоративным клиентам (B2B) в Чехии.</p>
-      <h3>3. Заключение договора</h3>
-      <p>Договор заключается письменным подтверждением заказа продавцом. Размещение на сайте — не обязывающее предложение. Продавец может отказать в принятии заказа в течение 3 рабочих дней.</p>
-      <h3>4. Цены и оплата</h3>
-      <ul><li>Цены без НДС, срок оплаты — 14 дней с даты счёта</li><li>Неустойка за просрочку: 0,05% в день</li><li>Банковский перевод или наличные по договорённости</li></ul>
-      <h3>5. Поставка</h3>
-      <ul><li>Срок: 2–4 недели с подтверждения и оплаты</li><li>Доставка по адресу покупателя в ЧР, стоимость по предложению</li><li>Риск переходит при передаче перевозчику</li></ul>
-      <h3>6. Право собственности</h3>
-      <p>Товар остаётся собственностью продавца до полной оплаты.</p>
-      <h3>7. Гарантия</h3>
-      <p>12 месяцев с даты поставки. Подробности — в Рекламационном регламенте.</p>
-      <h3>8. Ответственность</h3>
-      <p>За умысел и грубую небрежность. Косвенные убытки и упущенная выгода исключены. Лимит = сумма конкретного заказа.</p>
-      <h3>9–11. Право, споры, изменения</h3>
-      <p>Право ЧР. Споры: переговоры, затем суд в Праге. Обновления ОУП на multichef.cz с уведомлением за 14 дней.</p>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL: REKLAMACE -->
-<div class="modal-overlay" id="modal-reklamace">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('modal-reklamace')">×</button>
-    <div class="modal-lang-tabs">
-      <button class="modal-tab active" onclick="switchModalLang('modal-reklamace','cs')">🇨🇿 CZ</button>
-      <button class="modal-tab" onclick="switchModalLang('modal-reklamace','en')">🇬🇧 EN</button>
-      <button class="modal-tab" onclick="switchModalLang('modal-reklamace','ru')">🇷🇺 RU</button>
-    </div>
-    <div class="modal-content active" data-lang="cs">
-      <h2>Reklamační řád</h2>
-      <p class="modal-meta">SCRAEGG Pro · Platný od: 1. dubna 2026</p>
-      <h3>1. Záruční doba</h3>
-      <p>12 měsíců od data dodání, potvrzeného dodacím listem nebo fakturou.</p>
-      <h3>2. Co záruka kryje</h3>
-      <ul><li>Výrobní vady materiálu nebo zpracování</li><li>Poruchy parního systému Direct Power Steam</li><li>Nefunkčnost ovládacích prvků nebo elektroniky</li></ul>
-      <h3>3. Co záruka nekryje</h3>
-      <ul><li>Běžné opotřebení (těsnění, filtry, spotřební díly)</li><li>Mechanické poškození způsobené kupujícím</li><li>Nesprávné zapojení (mimo spec. 230V/50Hz/1800W)</li><li>Oprava třetí osobou nebo nevhodný čisticí prostředek</li></ul>
-      <h3>4. Jak reklamovat</h3>
-      <p>E-mail na <strong><a href="mailto:Info@proomlet.ru">Info@proomlet.ru</a></strong> · Předmět: <em>REKLAMACE — [jméno/firma]</em></p>
-      <ul><li>Popis závady + foto nebo video</li><li>Datum nákupu a číslo faktury</li><li>Kontaktní adresa a telefon</li></ul>
-      <h3>5. Lhůty</h3>
-      <ul><li>Potvrzení přijetí: do 2 pracovních dnů</li><li>Posouzení: do 10 pracovních dnů</li><li>Vyřízení (oprava / výměna): do 30 pracovních dnů</li></ul>
-      <h3>6. Nároky při uznané reklamaci</h3>
-      <ul><li>Bezplatná oprava nebo výměna</li><li>Sleva z ceny nebo vrácení peněz (pokud oprava / výměna není možná)</li><li>Doprava při uznané reklamaci na náklady prodávajícího</li></ul>
-    </div>
-    <div class="modal-content" data-lang="en">
-      <h2>Complaints Procedure</h2>
-      <p class="modal-meta">SCRAEGG Pro · Effective from: 1 April 2026</p>
-      <h3>1. Warranty Period</h3>
-      <p>12 months from delivery date, confirmed by delivery note or invoice.</p>
-      <h3>2. What Is Covered</h3>
-      <ul><li>Manufacturing defects in materials or workmanship</li><li>Faults in the Direct Power Steam system</li><li>Malfunction of controls or electronics</li></ul>
-      <h3>3. What Is Not Covered</h3>
-      <ul><li>Normal wear and tear (seals, filters, consumables)</li><li>Mechanical damage caused by the Buyer</li><li>Incorrect connection (outside spec. 230V/50Hz/1800W)</li><li>Third-party repair or unsuitable cleaning products</li></ul>
-      <h3>4. How to File a Claim</h3>
-      <p>Email <strong><a href="mailto:Info@proomlet.ru">Info@proomlet.ru</a></strong> · Subject: <em>WARRANTY CLAIM — [name/company]</em></p>
-      <ul><li>Description of defect + photo or video</li><li>Purchase date and invoice number</li><li>Delivery address and phone number</li></ul>
-      <h3>5. Timelines</h3>
-      <ul><li>Acknowledgement: within 2 business days</li><li>Assessment: within 10 business days</li><li>Resolution (repair / replacement): within 30 business days</li></ul>
-      <h3>6. Remedies for Accepted Claims</h3>
-      <ul><li>Free repair or replacement</li><li>Price reduction or refund (if repair / replacement not possible)</li><li>Shipping costs covered by Seller for accepted claims</li></ul>
-    </div>
-    <div class="modal-content" data-lang="ru">
-      <h2>Рекламационный регламент</h2>
-      <p class="modal-meta">SCRAEGG Pro · Действует с: 1 апреля 2026 г.</p>
-      <h3>1. Гаранти
-      <h3>2. Что покрывает гарантия</h3>
-      <ul><li>Производственные дефекты материала или изготовления</li><li>Неисправности системы Direct Power Steam</li><li>Неработоспособность кнопок управления или электроники</li></ul>
-      <h3>3. Что не покрывает гарантия</h3>
-      <ul><li>Естественный износ (уплотнители, фильтры, расходники)</li><li>Механические повреждения по вине покупателя</li><li>Неправильное подключение (вне спец. 230В/50Гц/1800Вт)</li><li>Ремонт третьими лицами или неподходящие моющие средства</li></ul>
-      <h3>4. Как подать рекламацию</h3>
-      <p>Письмо на <strong><a href="mailto:Info@proomlet.ru">Info@proomlet.ru</a></strong> · Тема: <em>РЕКЛАМАЦИЯ — [имя/компания]</em></p>
-      <ul><li>Описание дефекта + фото или видео</li><li>Дата покупки и номер счёта</li><li>Адрес доставки и телефон</li></ul>
-      <h3>5. Сроки</h3>
-      <ul><li>Подтверждение получения: в течение 2 рабочих дней</li><li>Оценка: в течение 10 рабочих дней</li><li>Урегулирование (ремонт / замена): в течение 30 рабочих дней</li></ul>
-      <h3>6. Права при признанной рекламации</h3>
-      <ul><li>Бесплатный ремонт или замена</li><li>Скидка или возврат денег (если ремонт / замена невозможны)</li><li>Транспортные расходы при признанной рекламации — за счёт продавца</li></ul>
     </div>
   </div>
 </div>
