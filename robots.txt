@@ -1,0 +1,11 @@
+User-agent: Yandex
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://скраег.рф/sitemap.xml
+Host: https://скраег.рф
