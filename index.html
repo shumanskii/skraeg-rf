@@ -82,7 +82,7 @@
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init('WaBE7_3-Wn8sPWpHr');</script>
+<script>emailjs.init('w2DNuo2q-XlaCnxy4');</script>
 <style>
 :root {
   --gold: #C8A84B;
@@ -1143,11 +1143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <h2 style="text-align:center" data-i18n="contact_title">Получить предложение для вашего заведения</h2>
     <p class="sec-sub" style="text-align:center;margin:0 auto 40px" data-i18n="contact_sub">Заполните форму — мы свяжемся с вами в течение одного рабочего дня, ответим на все вопросы и предложим условия для России.</p>
     <div class="form-wrap">
-      <!-- Замените YOUR_FORM_ID на ваш ID из formspree.io -->
-      <form id="contactForm" action="https://formspree.io/f/meerojkr" method="POST">
-        <input type="hidden" name="_replyto" id="_replyto">
-        <input type="hidden" name="_subject" value="Новая заявка SCRAEGG Pro — скраег.рф">
-        <input type="hidden" name="_next" value="https://скраег.рф/#contact">
+      <form id="contactForm">
         <div class="form-row">
           <div class="form-group">
             <label for="name" data-i18n="form_name">Имя *</label>
@@ -1239,81 +1235,42 @@ document.addEventListener('DOMContentLoaded', function() {
  
  
 <script>
-// Form submission
+// Form submission — напрямую через EmailJS, без Formspree
 const form = document.getElementById('contactForm');
-// Sync email to _replyto for Formspree auto-reply
-const emailInput = document.getElementById('email');
-const replytoInput = document.getElementById('_replyto');
-if (emailInput && replytoInput) {
-  emailInput.addEventListener('input', function() {
-    replytoInput.value = this.value;
-  });
-}
 const success = document.getElementById('formSuccess');
  
- 
-// Тексты подтверждения для формы ПОКУПКИ — по языкам (plain text для EmailJS)
-var purchaseConfirmBody = {
-  ru: function(name, company, phone) {
-    return 'Здравствуйте, ' + name + '!\n\n'
-      + 'Спасибо за интерес к SCRAEGG Pro. Мы получили вашу заявку и свяжемся с вами в течение одного рабочего дня — ответим на все вопросы и пришлём предложение для вашего заведения.\n\n'
-      + 'Ваши данные:\n'
-      + 'Заведение: ' + company + '\n'
-      + 'Телефон: ' + phone + '\n\n'
-      + 'С уважением,\nКоманда SCRAEGG Pro\nInfo@proomlet.ru · +7 925 005-54-82';
-  },
-  cs: function(name, company, phone) {
-    return 'Dobrý den, ' + name + '!\n\n'
-      + 'Děkujeme za zájem o SCRAEGG Pro. Obdrželi jsme vaši poptávku a ozveme se vám do jednoho pracovního dne — zodpovíme všechny dotazy a připravíme nabídku pro vaši provozovnu.\n\n'
-      + 'Vaše údaje:\n'
-      + 'Provozovna: ' + company + '\n'
-      + 'Telefon: ' + phone + '\n\n'
-      + 'S pozdravem,\nTým SCRAEGG Pro\nInfo@proomlet.ru · +7 925 005-54-82';
-  },
-  en: function(name, company, phone) {
-    return 'Hello, ' + name + '!\n\n'
-      + 'Thank you for your interest in SCRAEGG Pro. We have received your enquiry and will get back to you within one business day with answers to all your questions and a tailored offer for your venue.\n\n'
-      + 'Your details:\n'
-      + 'Venue: ' + company + '\n'
-      + 'Phone: ' + phone + '\n\n'
-      + 'Kind regards,\nSCRAEGG Pro Team\nInfo@proomlet.ru · +7 925 005-54-82';
-  }
-};
+const EMAILJS_SERVICE_ID   = 'service_t020spc';
+const TEMPLATE_CUSTOMER_ID = 'template_s8bl2jk'; // письмо клиенту
+const TEMPLATE_OWNER_ID    = 'template_4emizz5'; // заявка владельцу
  
 if (form) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = form.querySelector('.btn-submit');
-    const cl = window._currentLang || 'cs';
-    const tl = translations[cl] || translations['cs'];
-    btn.textContent = tl.sending || (cl==='en' ? 'Sending...' : cl==='cs' ? 'Odesíláme...' : 'Отправляем...');
+    const cl = window._currentLang || 'ru';
+    const tl = translations[cl] || translations['ru'];
+    btn.textContent = tl.sending || 'Отправляем...';
     btn.disabled = true;
  
+    const params = {
+      name:    document.getElementById('name').value,
+      company: document.getElementById('company').value || '—',
+      email:   document.getElementById('email').value,
+      phone:   document.getElementById('phone').value || '—',
+      type:    document.getElementById('type').value || '—',
+      message: document.getElementById('message').value || '—'
+    };
+ 
     try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
-      });
-      if (response.ok) {
-        var lang = window._currentLang || 'cs';
-        var name    = document.getElementById('name').value;
-        var company = document.getElementById('company').value || '—';
-        var phone   = document.getElementById('phone').value || '—';
-        var bodyFn  = purchaseConfirmBody[lang] || purchaseConfirmBody['cs'];
-        emailjs.send('Mulichef', 'template_y52szq7', {
-          email: document.getElementById('email').value,
-          message_body: bodyFn(name, company, phone)
-        }).catch(function(err) { console.warn('EmailJS error:', err); });
-        form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        const errText = tl.error || (cl==='en' ? 'Error. Please try again.' : cl==='cs' ? 'Chyba. Zkuste to znovu.' : 'Ошибка. Попробуйте ещё раз.');
-        btn.textContent = errText;
-        btn.disabled = false;
-      }
-    } catch(e) {
-      const errText = tl.error || (cl==='en' ? 'Error. Please try again.' : cl==='cs' ? 'Chyba. Zkuste to znovu.' : 'Ошибка. Попробуйте ещё раз.');
+      await Promise.all([
+        emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_CUSTOMER_ID, params),
+        emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_OWNER_ID, params)
+      ]);
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } catch(err) {
+      console.warn('EmailJS error:', err);
+      const errText = tl.error || 'Ошибка. Попробуйте ещё раз.';
       btn.textContent = errText;
       btn.disabled = false;
     }
